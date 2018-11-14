@@ -911,10 +911,7 @@ mfxStatus VideoDECODEH265::DecodeFrameCheck(mfxBitstream *bs,
 
             if (!frame)
             {
-                if (m_pH265VideoDecoder->GetTaskBroker()->IsEnoughForStartDecoding(true) && !m_globalTask)
-                    m_globalTask = true;
-                else
-                    return MFX_WRN_DEVICE_BUSY;
+                return MFX_WRN_DEVICE_BUSY;
             }
         }
 
