@@ -385,9 +385,6 @@ bool TaskBroker_H265::IsFrameCompleted(H265DecoderFrame * pFrame) const
 // Tries to find a new task for asynchronous processing
 bool TaskBroker_H265::GetNextTask(H265Task *pTask)
 {
-    UMC::AutomaticUMCMutex guard(m_mGuard);
-
-
     bool res = GetNextTaskInternal(pTask);
 
     return res;
