@@ -79,7 +79,7 @@ cmake_dependent_option(BUILD_SAMPLES "Build samples?" ON "BUILD_DISPATCHER" OFF 
 # Tools depend on samples (sample_common) and can't be built without it. The
 # following BUILD_TOOLS option declaration assures that.
 cmake_dependent_option(BUILD_TOOLS "Build tools?" "${BUILD_ALL}" "BUILD_SAMPLES" OFF)
-option(BUILD_TESTS "Build tests?" "${BUILD_ALL}")
+option(BUILD_TESTS "Build tests?" ON)
 option(USE_SYSTEM_GTEST "Use system installed gtest?" OFF)
 
 include( ${BUILDER_ROOT}/FindOpenCL.cmake )
